@@ -25,6 +25,13 @@
 .skeleton.author_list { display:block; }
 .skeleton.author_list .author_list_info { display:flex; flex-direction:column; gap:8px; }
 .skeleton.author_list .author_list_info span { line-height:1; }
+
+/** author **/
+.skeleton .d_profile, .skeleton .de_tab { width:100%; }
+.skeleton .profile_avatar .react-loading-skeleton { width:150px; height:150px; }
+.skeleton .profile_name { display:flex; flex-direction:column; justify-content:center; gap:16px; }
+.skeleton .profile_name > span { width:100%; display:block; }
+.skeleton .profile_name .react-loading-skeleton { width:100%; }
 /********** END SKELETONS **********/
 
 /****** SCREEN SIZES ******/
