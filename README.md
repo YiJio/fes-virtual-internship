@@ -4,6 +4,9 @@
 * Quick link: <a target="blank" href="https://fes-virtual-internship.vercel.app/">NFT Marketplace</a>.
 
 ## Changelog
+**[1.5] - 2024/12/09**
+* Implemented author page.
+
 **[1.4] - 2024/12/09**
 * Implemented explore items feature on explore page.
 

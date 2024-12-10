@@ -26,12 +26,12 @@ const NFTItemCardSkeleton = () => {
 	);
 }
 
-const NFTItemCard = ({ data }) => {
+const NFTItemCard = ({ data, authorId, authorImage }) => {
 	return (
 		<div className='nft__item'>
 			<div className='author_list_pp'>
-				<Link to={`/author/${data.authorId}`} data-bs-toggle='tooltip' data-bs-placement='top' title='Creator: Monica Lucas'>
-					<img className='lazy' src={data.authorImage} alt={`User ${data.authorId}`} />
+				<Link to={`/author/${data.authorId || authorId}`} data-bs-toggle='tooltip' data-bs-placement='top' title='Creator: Monica Lucas'>
+					<img className='lazy' src={data.authorImage || authorImage} alt={`User ${data.authorId || authorId}`} />
 					<i className='fa fa-check'></i>
 				</Link>
 			</div>
