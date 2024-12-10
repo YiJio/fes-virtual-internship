@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import axios from 'axios';
+import AOS from 'aos';
 // components
 import { NFTItemCard, NFTItemCardSkeleton } from '../UI/NFTItemCard';
 
@@ -47,6 +48,11 @@ const NewItems = () => {
       }
     }
     fetchItems();
+    AOS.init({
+      offset: 40,
+      duration: 1000,
+      easing: 'ease'
+    });
   }, []);
 
   return (
@@ -54,14 +60,16 @@ const NewItems = () => {
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12'>
-            <div className='text-center'>
+            <div className='text-center' data-aos='fade' data-aos-delay='0'>
               <h2>New Items</h2>
-              <div className='small-border bg-color-2'></div>
+              <div className='small-border bg-color-2' />
             </div>
           </div>
-          {ui_isLoading ? <NewItemsSkeleton /> : <OwlCarousel className='owl-theme' loop margin={10} nav responsive={carouselOptionsResponsive}>
-            {_items?.map((item, index) => (<NFTItemCard key={index} data={item} />))}
-          </OwlCarousel>}
+          <div data-aos='fade-up' data-aos-delay='200'>
+            {ui_isLoading ? <NewItemsSkeleton /> : <OwlCarousel className='owl-theme' loop margin={10} nav responsive={carouselOptionsResponsive}>
+              {_items?.map((item, index) => (<NFTItemCard key={index} data={item} />))}
+            </OwlCarousel>}
+          </div>
         </div>
       </div>
     </section>

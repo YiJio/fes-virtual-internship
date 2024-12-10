@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import axios from 'axios';
+import AOS from 'aos';
 
 const TopSellersSkeleton = () => {
   return (
@@ -43,6 +44,11 @@ const TopSellers = () => {
       }
     }
     fetchSellers();
+    AOS.init({
+      offset: 40,
+      duration: 1000,
+      easing: 'ease'
+    });
   }, []);
 
   return (
@@ -50,13 +56,13 @@ const TopSellers = () => {
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12'>
-            <div className='text-center'>
+            <div className='text-center' data-aos='fade' data-aos-delay='0'>
               <h2>Top Sellers</h2>
-              <div className='small-border bg-color-2'></div>
+              <div className='small-border bg-color-2' />
             </div>
           </div>
           <div className='col-md-12'>
-            {!ui_isLoading && _sellers ? (<ol className='author_list'>
+            {!ui_isLoading && _sellers ? (<ol className='author_list' data-aos='fade-up' data-aos-delay='200'>
               {_sellers?.map((seller, index) => (
                 <li key={index}>
                   <div className='author_list_pp'>

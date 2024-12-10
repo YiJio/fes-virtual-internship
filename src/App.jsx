@@ -1,6 +1,7 @@
 // packages
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // css
+import 'aos/dist/aos.css';
 import 'react-loading-skeleton/dist/skeleton.css';
 // pages
 import Home from './pages/Home';
