@@ -56,8 +56,7 @@ const NewItems = () => {
       // fetch API
       try {
         const resp = await axios.get('https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems');
-        let data = resp.data;
-        setItems(data);
+        setItems(resp.data);
         setTimeout(() => {
           setUiIsLoading(false);
         }, 500);
