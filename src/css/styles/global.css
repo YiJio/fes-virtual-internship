@@ -32,6 +32,12 @@
 .skeleton .profile_name { display:flex; flex-direction:column; justify-content:center; gap:16px; }
 .skeleton .profile_name > span { width:100%; display:block; }
 .skeleton .profile_name .react-loading-skeleton { width:100%; }
+
+/** item details **/
+.skeleton .item_info_counts > div { height:30px; }
+.skeleton .mr40 { margin-top:14px; width:100%; }
+.skeleton .de_tab_content { margin-right:40px; padding-top:36px; }
+.skeleton .spacer-40 { height:46px; }
 /********** END SKELETONS **********/
 
 /****** SCREEN SIZES ******/
