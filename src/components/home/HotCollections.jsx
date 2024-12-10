@@ -5,6 +5,34 @@ import Skeleton from 'react-loading-skeleton';
 import OwlCarousel from 'react-owl-carousel';
 import axios from 'axios';
 
+const HotCollectionsSkeleton = () => {
+  return (
+    <div className='owl-carousel owl-theme skeleton'>
+      <div className='owl-stage-outer'>
+        {new Array(4).fill(0).map((_, index) => (
+          <div key={index} className='nft_coll'>
+            <div className='nft_wrap'>
+              <Skeleton count={1} />
+            </div>
+            <div className='nft_coll_pp'>
+              <Skeleton circle height='100%' />
+              <i className='fa fa-check' />
+            </div>
+            <div className='nft_coll_info'>
+              <Skeleton count={1} width='30%' height='18px' />
+              <Skeleton count={1} width='20%' height='14px' />
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className='owl-nav'>
+        <button type='button' role='presentation' className='owl-prev'><span aria-label='Previous'>‹</span></button>
+        <button type='button' role='presentation' className='owl-next'><span aria-label='Next'>›</span></button>
+      </div>
+    </div>
+  );
+}
+
 const HotCollections = () => {
   // states
   const [_items, setItems] = useState([]);
@@ -46,29 +74,7 @@ const HotCollections = () => {
               <div className='small-border bg-color-2'></div>
             </div>
           </div>
-          {ui_isLoading ? <div className='owl-carousel owl-theme skeleton'>
-            <div className='owl-stage-outer'>
-              {new Array(4).fill(0).map((_, index) => (
-                <div key={index} className='nft_coll'>
-                  <div className='nft_wrap'>
-                    <Skeleton count={1} />
-                  </div>
-                  <div className='nft_coll_pp'>
-                    <Skeleton circle height='100%' />
-                    <i className='fa fa-check'></i>
-                  </div>
-                  <div className='nft_coll_info'>
-                    <Skeleton count={1} width='30%' height='18px' />
-                    <Skeleton count={1} width='20%' height='14px' />
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className='owl-nav'>
-              <button type='button' role='presentation' class='owl-prev'><span aria-label='Previous'>‹</span></button>
-              <button type='button' role='presentation' class='owl-next'><span aria-label='Next'>›</span></button>
-            </div>
-          </div> : <OwlCarousel className='owl-theme' loop margin={10} nav responsive={carouselOptionsResponsive}>
+          {ui_isLoading ? <HotCollectionsSkeleton /> : <OwlCarousel className='owl-theme' loop margin={10} nav responsive={carouselOptionsResponsive}>
             {_items.map((item) => (
               <div key={item.id} className='nft_coll'>
                 <div className='nft_wrap'>
@@ -80,7 +86,7 @@ const HotCollections = () => {
                   <Link to={`/author/${item.authorId}`}>
                     <img className='lazy pp-coll' src={item.authorImage} alt={`User ${item.authorId}`} />
                   </Link>
-                  <i className='fa fa-check'></i>
+                  <i className='fa fa-check' />
                 </div>
                 <div className='nft_coll_info'>
                   <Link to='/explore'>
