@@ -1,23 +1,30 @@
 /************ SKELETONS ************/
 .skeleton { display:flex; }
+.skeleton br { display:none; }
 .skeleton .owl-stage-outer { width:100%; display:flex; gap:10px; }
+.skeleton .react-loading-skeleton { display:block; height:100%; }
 
 /** hot collections **/
 .skeleton .nft_coll { width:100%; }
 .skeleton .nft_wrap { height:152px; }
-.skeleton .nft_wrap .react-loading-skeleton { display:block; height:100%; border-radius:0; }
+.skeleton .nft_wrap .react-loading-skeleton { border-radius:0; }
 .skeleton .nft_coll_pp { height:60px; border-radius:50%; background:#ffffff; padding:5px; }
-.skeleton .nft_coll_pp .react-loading-skeleton { display:block; height:100%; }
-.skeleton .nft_coll_info { margin-top:-6px; }
+.skeleton .nft_coll_info { display:flex; flex-direction:column; gap:8px; }
+.skeleton .nft_coll_info > span { display:flex; align-items:center; justify-content:center; }
 
 /** new items **/
-.skeleton .nft__item { width:100%; height:90%; }
-.skeleton .author_list_pp { height:50px; border-radius:50%; background:#ffffff; padding:5px; }
-.skeleton .author_list_pp .react-loading-skeleton { display:block; height:100%; }
+.skeleton .nft__item { width:100%; }
+.skeleton .author_list_pp { height:50px; border-radius:50%; background:#ffffff; }
 .skeleton .nft__item_wrap { display:block; }
-.skeleton .nft__item_wrap .react-loading-skeleton { display:block; width:100%; height:100%; }
-.skeleton .nft__item_info { margin-top:4px; }
+.skeleton .nft__item_wrap .react-loading-skeleton { width:100%; }
+.skeleton .nft__item_info { margin-top:8px; display:flex; flex-direction:column; gap:8px; }
+.skeleton .nft__item_like { position:absolute; bottom:0; right:0; display:flex; align-items:center; }
 .skeleton .nft__item_like:hover i { color:#ddd; }
+
+/** top sellers **/
+.skeleton.author_list { display:block; }
+.skeleton.author_list .author_list_info { display:flex; flex-direction:column; gap:8px; }
+.skeleton.author_list .author_list_info span { line-height:1; }
 /********** END SKELETONS **********/
 
 /****** SCREEN SIZES ******/
