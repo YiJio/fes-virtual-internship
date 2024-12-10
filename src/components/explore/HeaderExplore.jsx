@@ -1,37 +1,23 @@
-import React from "react";
+// packages
+import React from 'react';
 
 const HeaderExplore = () => {
   return (
-    <div className="col-lg-12">
-      <div className="items_filter">
-        <form
-          action="blank.php"
-          className="row form-dark"
-          id="form_quick_search"
-          method="post"
-          name="form_quick_search"
-        >
-          <div className="col text-center">
-            <input
-              className="form-control"
-              id="name_1"
-              name="name_1"
-              placeholder="search item here..."
-              type="text"
-            />{" "}
-            <a href="#" id="btn-submit">
-              <i className="fa fa-search bg-color-secondary"></i>
+    <div className='col-lg-12'>
+      <div className='items_filter'>
+        <form action='blank.php' className='row form-dark' id='form_quick_search' method='post' name='form_quick_search'>
+          <div className='col text-center'>
+            <input className='form-control' id='name_1' name='name_1' placeholder='search item here...' type='text' />{' '}
+            <a href='#' id='btn-submit'>
+              <i className='fa fa-search bg-color-secondary' />
             </a>
-            <div className="clearfix"></div>
+            <div className='clearfix' />
           </div>
         </form>
-
-        <div id="item_category" className="dropdown">
-          <a href="#" className="btn-selector">
-            All categories
-          </a>
+        <div id='item_category' className='dropdown'>
+          <a href='#' className='btn-selector'>All categories</a>
           <ul>
-            <li className="active">
+            <li className='active'>
               <span>All categories</span>
             </li>
             <li>
@@ -60,13 +46,10 @@ const HeaderExplore = () => {
             </li>
           </ul>
         </div>
-
-        <div id="buy_category" className="dropdown">
-          <a href="#" className="btn-selector">
-            Buy Now
-          </a>
+        <div id='buy_category' className='dropdown'>
+          <a href='#' className='btn-selector'>Buy Now</a>
           <ul>
-            <li className="active">
+            <li className='active'>
               <span>Buy Now</span>
             </li>
             <li>
@@ -77,13 +60,10 @@ const HeaderExplore = () => {
             </li>
           </ul>
         </div>
-
-        <div id="items_type" className="dropdown">
-          <a href="#" className="btn-selector">
-            All Items
-          </a>
+        <div id='items_type' className='dropdown'>
+          <a href='#' className='btn-selector'>All Items</a>
           <ul>
-            <li className="active">
+            <li className='active'>
               <span>All Items</span>
             </li>
             <li>
