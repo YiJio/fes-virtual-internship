@@ -1,12 +1,24 @@
+/************ SKELETONS ************/
 .skeleton { display:flex; }
 .skeleton .owl-stage-outer { width:100%; display:flex; gap:10px; }
-.skeleton .nft_coll { width:100%; }
 
+/** hot collections **/
+.skeleton .nft_coll { width:100%; }
 .skeleton .nft_wrap { height:152px; }
 .skeleton .nft_wrap .react-loading-skeleton { display:block; height:100%; border-radius:0; }
 .skeleton .nft_coll_pp { height:60px; border-radius:50%; background:#ffffff; padding:5px; }
 .skeleton .nft_coll_pp .react-loading-skeleton { display:block; height:100%; }
 .skeleton .nft_coll_info { margin-top:-6px; }
+
+/** new items **/
+.skeleton .nft__item { width:100%; height:90%; }
+.skeleton .author_list_pp { height:50px; border-radius:50%; background:#ffffff; padding:5px; }
+.skeleton .author_list_pp .react-loading-skeleton { display:block; height:100%; }
+.skeleton .nft__item_wrap { display:block; }
+.skeleton .nft__item_wrap .react-loading-skeleton { display:block; width:100%; height:100%; }
+.skeleton .nft__item_info { margin-top:4px; }
+.skeleton .nft__item_like:hover i { color:#ddd; }
+/********** END SKELETONS **********/
 
 /****** SCREEN SIZES ******/
 
@@ -17,17 +29,17 @@
 
 /** regular screen size **/
 @media (max-width:1024px) {
-	.skeleton .nft_coll { flex:0 0 auto; width:calc(100% / 3 - 6.5px); }
+	.skeleton .nft_coll, .skeleton .nft__item { flex:0 0 auto; width:calc(100% / 3 - 6.5px); }
 }
 
 /** tablet size **/
 @media (max-width:768px) {
-	.skeleton .nft_coll { flex:0 0 auto; width:calc(50% - 5px); }
+	.skeleton .nft_coll, .skeleton .nft__item { flex:0 0 auto; width:calc(50% - 5px); }
 }
 
 /** large smartphone size **/
 @media (max-width:600px) {
-	.skeleton .nft_coll { flex:0 0 auto; width:100%; }
+	.skeleton .nft_coll, .skeleton .nft__item { flex:0 0 auto; width:100%; }
 }
 
 /** small smartphone size **/
