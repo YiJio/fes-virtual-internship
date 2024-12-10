@@ -60,6 +60,7 @@ const Author = () => {
   }
 
   const handleCopied = () => {
+    console.log('clicked')
     navigator.clipboard.writeText(_author.address);
     setUiIsCopiedText('Copied!');
   }
@@ -78,6 +79,7 @@ const Author = () => {
         setUiIsLoading(false);
       }
     }
+    window.scrollTo(0, 0);
     fetchAuthor();
   }, []);
 
@@ -86,7 +88,7 @@ const Author = () => {
     if(ui_isCopiedText === 'Copied!') {
       setTimeout(() => {
         setUiIsCopiedText('Copy');
-      }, 2000);
+      }, 1500);
     }
   }, [ui_isCopiedText]);
 
