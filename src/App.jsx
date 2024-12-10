@@ -1,7 +1,7 @@
 // packages
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // css
-import 'react-loading-skeleton/dist/skeleton.css'
+import 'react-loading-skeleton/dist/skeleton.css';
 // pages
 import Home from './pages/Home';
 import Explore from './pages/Explore';
