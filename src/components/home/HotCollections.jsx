@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import OwlCarousel from 'react-owl-carousel';
 import axios from 'axios';
+import AOS from 'aos';
 
 const HotCollectionsSkeleton = () => {
   return (
@@ -61,6 +62,11 @@ const HotCollections = () => {
       }
     }
     fetchItems();
+    AOS.init({
+      offset: 40,
+      duration: 1000,
+      easing: 'ease'
+    });
   }, []);
 
   return (
@@ -68,34 +74,36 @@ const HotCollections = () => {
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12'>
-            <div className='text-center'>
+            <div className='text-center' data-aos='fade' data-aos-delay='0'>
               <h2>Hot Collections</h2>
-              <div className='small-border bg-color-2'></div>
+              <div className='small-border bg-color-2' />
             </div>
           </div>
-          {ui_isLoading ? <HotCollectionsSkeleton /> : <OwlCarousel className='owl-theme' loop margin={10} nav responsive={carouselOptionsResponsive}>
-            {_items.map((item) => (
-              <div key={item.id} className='nft_coll'>
-                <div className='nft_wrap'>
-                  <Link to={`/item-details/${item.nftId}`}>
-                    <img src={item.nftImage} className='lazy img-fluid' alt={`${item.title} image`} />
-                  </Link>
+          <div data-aos='fade-up' data-aos-delay='200'>
+            {ui_isLoading ? <HotCollectionsSkeleton /> : <OwlCarousel className='owl-theme' loop margin={10} nav responsive={carouselOptionsResponsive}>
+              {_items.map((item) => (
+                <div key={item.id} className='nft_coll'>
+                  <div className='nft_wrap'>
+                    <Link to={`/item-details/${item.nftId}`}>
+                      <img src={item.nftImage} className='lazy img-fluid' alt={`${item.title} image`} />
+                    </Link>
+                  </div>
+                  <div className='nft_coll_pp'>
+                    <Link to={`/author/${item.authorId}`}>
+                      <img className='lazy pp-coll' src={item.authorImage} alt={`User ${item.authorId}`} />
+                    </Link>
+                    <i className='fa fa-check' />
+                  </div>
+                  <div className='nft_coll_info'>
+                    <Link to='/explore'>
+                      <h4>{item.title}</h4>
+                    </Link>
+                    <span>ERC-{item.code}</span>
+                  </div>
                 </div>
-                <div className='nft_coll_pp'>
-                  <Link to={`/author/${item.authorId}`}>
-                    <img className='lazy pp-coll' src={item.authorImage} alt={`User ${item.authorId}`} />
-                  </Link>
-                  <i className='fa fa-check' />
-                </div>
-                <div className='nft_coll_info'>
-                  <Link to='/explore'>
-                    <h4>{item.title}</h4>
-                  </Link>
-                  <span>ERC-{item.code}</span>
-                </div>
-              </div>
-            ))}
-          </OwlCarousel>}
+              ))}
+            </OwlCarousel>}
+          </div>
         </div>
       </div>
     </section>
